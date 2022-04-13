@@ -13,17 +13,28 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
+Route::middleware(['web'])->group(function(){
+
+    Route::get('/', function () {
+        return view('home');
+    });
+
+    Route::view('/projects', 'projects')->name('projects');
+    
+    // Route::get('/', function () {
+    //     return view('welcome');
+    // });
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+
+Route::middleware(["auth"])->group(function(){
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+});
 
 
 require __DIR__.'/auth.php';
