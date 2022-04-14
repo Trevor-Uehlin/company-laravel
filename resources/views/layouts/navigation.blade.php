@@ -12,13 +12,21 @@
                 </div>
 
                 <!-- Navigation Links -->
-                @auth
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('projects')" :active="request()->routeIs('projects')">
-                            {{ __('Projects') }}
-                        </x-nav-link>
-                    </div>
-                @endauth
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+
+                    <x-nav-link :href="route('projects')" :active="request()->routeIs('projects')">
+                        {{ __('My Projects') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                        {{ __('About Me') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                        {{ __('Contact Me') }}
+                    </x-nav-link>
+                    
+                </div>
 
             </div>
 
@@ -42,7 +50,7 @@
                         <x-slot name="content">
                             <!-- Authentication -->
                             <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                                {{ __('Dashboard') }}
+                                {{ __('My Dashboard') }}
                             </x-dropdown-link>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -86,12 +94,20 @@
         <div class="pt-2 pb-3 space-y-1">
 
             <x-responsive-nav-link :href="route('projects')" :active="request()->routeIs('projects')">
-                {{ __('Projects') }}
+                {{ __('My Projects') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                {{ __('About Me') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                {{ __('Contact Me') }}
             </x-responsive-nav-link>
             
             @auth
                 <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
+                    {{ __('My Dashboard') }}
                 </x-responsive-nav-link>
             @endauth
         </div>

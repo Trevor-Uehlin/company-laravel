@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Here are some of the projects that I have been working on.') }}
+            {{ __('A little about me and my goals.') }}
         </h2>
     </x-slot>
 </x-app-layout>
