@@ -9,15 +9,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['web'])->group(function(){
 
-    Route::get('/', function () {
-        return view('home');
-    });
+    Route::view('/', 'home')->name('home');
 
     Route::view('/projects', 'projects')->name('projects');
 
     Route::view('/about', 'about')->name('about');
 
-    Route::view('/contact', 'contact')->name('contact');
+    # Email Routes
+    Route::resource('/contact', 'App\Http\Controllers\EmailController')->names(['index' => 'contact', 'store' => 'send']);
+    Route::view('/email/success', 'email.success')->name('email/success');
 });
 
 

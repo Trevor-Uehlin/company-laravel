@@ -1,0 +1,20 @@
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+  
+.content-wrap {
+    padding-bottom: 5.7rem;    /* Footer height */
+}
+  
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5.7rem;            /* Footer height */
+}
+
+.fa {
+    font-size: 30px;
+    margin: 0 19px 0 19px;
+}
