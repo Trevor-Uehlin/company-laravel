@@ -31,7 +31,6 @@
             </div>
 
             <!-- Settings Dropdown -->
-
             @auth
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
                     <x-dropdown align="right" width="48">
@@ -119,7 +118,7 @@
                     <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
                     <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
                 @else
-                    <div class="font-medium text-sm text-gray-500">Guest User</div>
+                    {{-- <div class="font-medium text-sm text-gray-500">Guest User</div> --}}
                 @endauth
             </div>
 
