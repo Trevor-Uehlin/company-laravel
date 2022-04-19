@@ -6,4 +6,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>{{ url('/about') }}</loc>
+        <lastmod>{{$today}}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>{{ url('/contact') }}</loc>
+        <lastmod>{{$today}}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
