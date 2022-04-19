@@ -20,7 +20,7 @@
 }
 
 .nav-logo{
-    display: inline;
+    display: inline !important;
 }
 
 
