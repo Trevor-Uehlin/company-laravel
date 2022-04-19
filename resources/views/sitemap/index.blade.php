@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>{{ url('/') }}</loc>
-        <lastmod>2022-04-16 19:46 +00:00</lastmod>
+        <lastmod>{{$today}}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

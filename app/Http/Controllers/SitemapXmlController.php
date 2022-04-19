@@ -3,17 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
-class SitemapXmlController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return response()->view('sitemap.index')->header('Content-Type', 'text/xml');
+class SitemapXmlController extends Controller {
+
+    public function index() {
+
+        $today = Carbon::now()->toDateTimeString();
+        
+        return response()->view('sitemap.index', compact("today"))->header('Content-Type', 'text/xml');
     }
 
     /**
