@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="/">
-                        {{-- <x-application-logo class="nav-logo block h-10 w-auto fill-current text-gray-600" /> --}}
+                        <x-application-logo class="nav-logo block h-6 w-auto fill-current text-gray-600" />
                         {{config("app.name")}}
                     </a>
                 </div>
