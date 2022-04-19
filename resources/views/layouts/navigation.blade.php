@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center logo-container">
                     <a href="/">
                         <x-application-logo class="nav-logo block h-8 w-auto fill-current text-gray-600" />
                         {{config("app.name")}}
