@@ -19,6 +19,10 @@
     margin: 0 19px 0 19px;
 }
 
+.nav-logo{
+    display: inline;
+}
+
 
 @media only screen and (max-width: 600px) {
 
