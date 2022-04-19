@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['web'])->group(function(){
 
+    Route::get('/sitemap.xml', 'App\Http\Controllers\SitemapXmlController@index');
+
     Route::view('/', 'home')->name('home');
 
     Route::view('/projects', 'projects')->name('projects');
