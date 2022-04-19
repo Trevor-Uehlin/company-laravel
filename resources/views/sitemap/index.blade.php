@@ -3,19 +3,16 @@
     <sitemap>
         <loc>{{ url('/') }}</loc>
         <lastmod>{{$today}}</lastmod>
-        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </sitemap>
     <sitemap>
         <loc>{{ url('/about') }}</loc>
         <lastmod>{{$today}}</lastmod>
-        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </sitemap>
     <sitemap>
         <loc>{{ url('/contact') }}</loc>
         <lastmod>{{$today}}</lastmod>
-        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </sitemap>
 </sitemapindex>
