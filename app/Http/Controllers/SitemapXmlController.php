@@ -9,8 +9,8 @@ class SitemapXmlController extends Controller {
 
     public function index() {
 
-        $today = Carbon::now()->toDateTimeString();
-        
+        $today = Carbon::now()->toDateString();
+
         return response()->view('sitemap.index', compact("today"))->header('Content-Type', 'text/xml');
     }
 
