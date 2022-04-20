@@ -9,7 +9,7 @@ Route::middleware(['web'])->group(function(){
 
         $user = auth()->user();
 
-        var_dump($user->isAdminstrator());exit;
+        var_dump($user->isAdministrator());exit;
     });
 
     Route::get('/sitemap.xml', 'App\Http\Controllers\SitemapXmlController@index');

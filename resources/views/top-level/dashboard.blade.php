@@ -10,4 +10,15 @@
         {{__('You are logged in...thank you for registering!')}}
     </x-custom.sub-content-area>
 
+
+    @if(auth()->user()->isAdministrator())
+
+        <x-custom.sub-content-area>
+            {{__("Administrative Dashboard")}}
+        </x-custom.sub-content-area>
+
+    @endif
+
+    
+
 </x-app-layout>
