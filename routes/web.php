@@ -1,13 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
+// use Illuminate\Support\Facades\User;
 
 Route::middleware(['web'])->group(function(){
+
+    Route::get("/test", function(){
+
+        $user = auth()->user();
+
+        var_dump($user->isAdminstrator());exit;
+    });
 
     Route::get('/sitemap.xml', 'App\Http\Controllers\SitemapXmlController@index');
 
