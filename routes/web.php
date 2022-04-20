@@ -5,13 +5,6 @@ use App\Models\User;
 
 Route::middleware(['web'])->group(function(){
 
-    Route::get("/test", function(){
-
-        $user = auth()->user();
-
-        var_dump($user->isAdministrator());exit;
-    });
-
     Route::get('/sitemap.xml', 'App\Http\Controllers\SitemapXmlController@index');
 
     Route::view('/', 'top-level.home')->name('home');
@@ -35,6 +28,17 @@ Route::middleware(['web'])->group(function(){
 Route::middleware(['auth'])->group(function(){
 
     Route::view('/dashboard', 'top-level.dashboard')->name('dashboard');
+
+});
+
+Route::middleware(['admin'])->group(function(){
+
+    Route::get("/test", function(){
+
+        $user = auth()->user();
+
+        var_dump($user->isAdministrator());exit;
+    });
 
 
     #############################################   Users   ########################################################################
