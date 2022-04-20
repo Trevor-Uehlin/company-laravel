@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use Illuminate\Support\Facades\User;
+use App\Models\User;
 
 Route::middleware(['web'])->group(function(){
 
@@ -35,6 +35,18 @@ Route::middleware(['web'])->group(function(){
 Route::middleware(['auth'])->group(function(){
 
     Route::view('/dashboard', 'top-level.dashboard')->name('dashboard');
+
+
+    #############################################   Users   ########################################################################
+
+    Route::resource("/users", "App\Http\Controllers\UserController");
+
+    Route::get("/users/delete/{id}", function($id){
+
+        $user = User::find($id)->destroy($id);
+
+        return redirect(route("users.index"));
+    });
 
 });
 

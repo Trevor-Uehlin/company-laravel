@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Role;
+use App\Notifications\NewAccount;
 
 class User extends Authenticatable
 {
@@ -54,4 +55,10 @@ class User extends Authenticatable
 
         return $this->role->name == 'administrator';
     }
+
+    public function sendNewAccountNotification(){
+
+        $this->notify(new NewAccount($this));
+    }
+
 }
