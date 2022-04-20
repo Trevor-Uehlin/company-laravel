@@ -29,7 +29,7 @@ class NewAccount extends Notification {
         return (new MailMessage)
                     ->line('Your trevoruehlin.com account has been created.  Click here to confirm your account and set your password.')
                     ->action('Set Your Password', url("/set-password"))
-                    ->line('Thank you for using our new web application!');
+                    ->line('Thanks for checking out my new app!');
     }
 
     /**
