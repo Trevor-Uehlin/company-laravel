@@ -11,11 +11,11 @@ Route::middleware(['web'])->group(function(){
 
     Route::get('/sitemap.xml', 'App\Http\Controllers\SitemapXmlController@index');
 
-    Route::view('/', 'home')->name('home');
+    Route::view('/', 'top-level.home')->name('home');
 
-    Route::view('/projects', 'projects')->name('projects');
+    Route::view('/projects', 'top-level.projects')->name('projects');
 
-    Route::view('/about', 'about')->name('about');
+    Route::view('/about', 'top-level.about')->name('about');
 
     # Email Routes
     Route::resource('/contact', 'App\Http\Controllers\EmailController')->names(['index' => 'contact', 'store' => 'send']);
@@ -31,9 +31,7 @@ Route::middleware(['web'])->group(function(){
 
 Route::middleware(['auth'])->group(function(){
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::view('/dashboard', 'top-level.dashboard')->name('dashboard');
 
 });
 
