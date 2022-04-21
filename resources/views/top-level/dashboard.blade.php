@@ -18,10 +18,10 @@
 
             <br />
             <br />
-            <i class="fa fa-plus" style="font-size:20px;color:blue;"></i><a href="{{route("users.create")}}">Create a New User</a>
+            <i class="fa fa-plus" style="font-size:20px;color:blue;"></i><a href="{{route("users.create")}}"> Create a New User</a>
             <br />
             <br />
-            <i class="fa fa-user" style="font-size:20px;color:blue;"></i><a href="{{route("users.index")}}">Manage Users</a>
+            <i class="fa fa-user" style="font-size:20px;color:blue;"></i><a href="{{route("users.index")}}"> Manage Users</a>
         </x-custom.sub-content-area>
 
     @endif

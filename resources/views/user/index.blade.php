@@ -3,7 +3,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Users') }}
-            <a href="{{route("users.create")}}" class="float-right"><i class="fa fa-plus" style="font-size:40px;color:blue;"></i></a>
+            <a href="{{route("users.create")}}" class="float-right"><i class="fa fa-plus" style="font-size:35px;color:blue;"></i></a>
         </h2>
     </x-slot>
 
