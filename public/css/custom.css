@@ -14,7 +14,7 @@
     height: 5.7rem;            /* Footer height */
 }
 
-.fa {
+footer .fa {
     font-size: 30px;
     margin: 0 19px 0 19px;
 }
