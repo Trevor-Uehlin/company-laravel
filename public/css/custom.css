@@ -22,6 +22,10 @@
 .nav-logo{
     display: inline-block;
 }
+.page-container{
+    background-color: rgba(0,0,255,0.5)
+}
+
 
 
 @media only screen and (max-width: 730px) {

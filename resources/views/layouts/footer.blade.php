@@ -1,7 +1,7 @@
 
 <footer id="footer" class="bg-light text-center ">
 
-    <div class="text-center p-3" style="background-color: #add8e6">
+    <div class="text-center p-3">
 
         <div class="container">
             <section>

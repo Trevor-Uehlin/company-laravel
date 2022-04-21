@@ -34,12 +34,12 @@
                 <x-label for="user_type" :value="__('Select User Type')" />
 
                 <select name="user_type" id="user_type" class="block mt-1 w-full">
-                    <option value=2 @selected($user->user_type == "subscriber")>Subscriber</option>
-                    <option value=1 @selected($user->user_type == "administrator")>Administrator</option>
+                    <option value=2 @selected($user->isAdministrator())>Subscriber</option>
+                    <option value=1 @selected($user->isAdministrator())>Administrator</option>
                 </select>
             </div>
 
-            <!-- Password -->
+            {{-- <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />
 
@@ -56,7 +56,7 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
                                 name="password_confirmation"/>
-            </div>
+            </div> --}}
 
             <div class="flex items-center justify-end mt-4">
                 <x-button class="ml-4">

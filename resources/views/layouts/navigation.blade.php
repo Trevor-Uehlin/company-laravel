@@ -77,7 +77,7 @@
                                 @auth
                                     {{ Auth::user()->name }}
                                 @else
-                                    {{'Guest User'}}
+                                    {{'Sign In'}}
                                 @endauth
                             </div>
 
@@ -112,7 +112,7 @@
                                 {{ __('Log In') }}
                             </x-dropdown-link>
                             <x-dropdown-link :href="route('register')" :active="request()->routeIs('register')">
-                                {{ __('Register') }}
+                                {{ __('Sign Up') }}
                             </x-dropdown-link>
 
                         @endauth
