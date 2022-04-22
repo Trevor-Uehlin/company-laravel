@@ -20,7 +20,7 @@ class Project extends Model {
     protected $dates = ['deleted_at'];
 
 
-    // Using a pivot table to get all the images associated with the project
+    // Using a pivot table to get all the images associated with the project. This Project belongs to many Images.
     public function images() {
 
         return $this->belongsToMany(Image::class);

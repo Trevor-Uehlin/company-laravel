@@ -57,19 +57,46 @@ class ProjectController extends Controller {
 
     public function show($id) {
 
-        var_dump("Hello from show");
+        $project = Project::find($id);
+
+        return view('projects.edit', compact('project'));
     }
 
 
     public function edit($id) {
 
-        //
+        var_dump("edit");exit;
     }
 
 
     public function update(Request $request, $id) {
 
-        //
+        $project = Project::find($id);
+        $project->title = $request['title'];
+        $project->organization = $request['organization'];
+        $project->description = $request['description'];
+        $project->update();
+
+        $file = $request->file('file');
+
+        if(!empty($file)) {
+
+            $image = new Image();
+            $image->path = $file->store('project-images');
+            $image->title = $file->getClientOriginalName();
+            $image->size = $file->getSize();
+            $image->type = $file->extension();
+    
+    
+            $image->save();
+    
+            DB::table('image_project')->insert([
+                'image_id' => $image->id,
+                'project_id'  => $project->id
+            ]);
+        }
+
+        return redirect(route('projects'));
     }
 
     public function destroy($id) {

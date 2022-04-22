@@ -11,7 +11,7 @@
 
     @foreach ($projects as $project)
 
-        <x-custom.sub-content-area>
+        <x-custom.sub-content-area class="pic-list">
 
             @auth
                 @if(auth()->user()->isAdministrator())
@@ -27,10 +27,15 @@
             <p class="h4"><strong>{{$project->title}}</strong></p>
             <p><strong>Organization: </strong>{{$project->organization}}</p>
             <p><strong>Description: </strong>{{$project->description}}</p>
-
-            @foreach ($project->images as $image)
-                <img src="{{asset('storage/' . $image->path)}}" alt="{{$image->title}}">
-            @endforeach
+        
+            <div style="background-color: blue;">
+                @foreach ($project->images as $image)
+                    <img src="{{asset($image->path)}}" alt="{{$image->title}}">
+                    <br />
+                    <br />
+                    <br />
+                @endforeach
+            </div>
         </x-custom.sub-content-area>
     
     @endforeach

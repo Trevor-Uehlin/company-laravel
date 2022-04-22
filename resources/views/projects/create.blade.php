@@ -1,51 +1,52 @@
-
 <x-app-layout>
+
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Add a New Poject') }}
+            {{ __('Create a new project') }}
         </h2>
     </x-slot>
 
     <br />
-    
+    <br />
+
     <div class="container">
-        {!! Form::open(["action" => "App\Http\Controllers\ProjectController@store", "class" => "p-form", "files" => true]) !!}
-    
-    
-        <div class="form-group">
-        {!! Form::label("title", "Title") !!}
-        {!! Form::text("title", "", ["class" => "form-control"]) !!}
-        </div>
+        <form method="POST" action="{{route("projects.store")}}" enctype="multipart/form-data">
+            @csrf
 
-        <div class="form-group">
-            {!! Form::label("description", "Description") !!}
-            {!! Form::text("description", "", ["class" => "form-control"]) !!}
-        </div>
+            <div>
+                <x-label for="title" :value="__('Title')" />
 
-        <div class="form-group">
-            {!! Form::label("organization", "Organization") !!}
-            {!! Form::text("organization", "", ["class" => "form-control"]) !!}
-        </div>
-    
-    
-        <div class="form-group">
-        {!! Form::file("file") !!}
-        </div>
-    
-        {!! Form::submit("Submit Post", ["class" => "btn btn-primary"]) !!}
-    
-        {!! Form::close() !!}
-    
-    
-    
-        @if(count($errors) > 0)
-        <div class="alert-danger alert">
-            <ul>
-            @foreach($errors->all() as $error)
-                <li>{{$error}}</li>
-            @endforeach
-            </ul>
-        </div>
-        @endif
+                <x-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('name')" required autofocus />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="organization" :value="__('Organization')" />
+
+                <x-input id="organization" class="block mt-1 w-full" type="text" name="organization" required />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="description" :value="__('Description')" />
+
+                <x-textarea id="description" class="block mt-1 w-full" name="description" required autofocus />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="file" :value="__('Upload an Image')" />
+
+                <x-input id="file" class="block mt-1 w-full" type="file" name="file" />
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                <x-button class="ml-4">
+                    {{ __('Save Project') }}
+                </x-button>
+            </div>
+            
+        </form>
     </div>
+
+
+
 </x-app-layout>
