@@ -1,11 +1,18 @@
-.page-container {
+.content-wrap {
+    padding-bottom: 5.7rem;    /* Footer height */
+}
+
+.home-page{
+    background-size: 100% 100%;
+    min-height: 79.4vh;
+    background-repeat: no-repeat;
+}
+
+.page-container{
     position: relative;
     min-height: 100vh;
 }
   
-.content-wrap {
-    padding-bottom: 5.7rem;    /* Footer height */
-}
   
 #footer {
     position: absolute;
@@ -28,9 +35,26 @@ footer .fa {
 
 
 
+
 @media only screen and (max-width: 730px) {
 
     button.flex.items-center.text-sm.font-medium.text-gray-500.hover\:text-gray-700.hover\:border-gray-300.focus\:outline-none.focus\:text-gray-700.focus\:border-gray-300.transition.duration-150.ease-in-out {
         margin-left: 20px;
+    }
+
+    .home-page {
+        background-size: cover;
+        min-height: 76.5vh;
+        background-repeat: no-repeat;
+    }
+    
+}
+
+@media only screen and (max-width: 730px) {
+
+    .home-page {
+        background-size: cover;
+        min-height: 82.6vh;
+        background-repeat: no-repeat;
     }
 }

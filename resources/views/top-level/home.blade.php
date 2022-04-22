@@ -1,27 +1,32 @@
 <x-app-layout>
 
-    {{-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Home') }}
-        </h2>
-    </x-slot> --}}
+    <div class="home-page" style="background-image: url('{{asset("storage/industry.jpg")}}');">
 
-    <x-custom.sub-content-area>
+        {{-- <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Home') }}
+            </h2>
+        </x-slot> --}}
 
-        <p>
-            Hello, I'm Trevor Uehlin...
-        </p>
+        {{-- <x-custom.sub-content-area>
 
-        <br />
+            <p>
+                Hello, I'm Trevor Uehlin...
+            </p>
 
-        <p>
-            This is my new website.  It is intended to serve as a portfolio page, and a place for me to practice Laravel.
-        </p>
+            <br />
 
-        <p>
-            This site is a work in progress.  There is not a lot of content, but more will be added daily.
-        </p>
+            <p>
+                This is my new website.  It is intended to serve as a portfolio page, and a place for me to practice Laravel.
+            </p>
 
-    </x-custom.sub-content-area>
+            <p>
+                This site is a work in progress.  There is not a lot of content, but more will be added daily.
+            </p>
+
+        </x-custom.sub-content-area> --}}
+
+    </div>
+
 
 </x-app-layout>
