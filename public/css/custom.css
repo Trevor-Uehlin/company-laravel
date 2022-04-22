@@ -1,19 +1,22 @@
+.page-container{
+    background-color: rgba(0,0,255,0.5);
+    position: relative;
+    min-height: 100vh;
+}
 .content-wrap {
     padding-bottom: 5.7rem;    /* Footer height */
 }
+.nav-logo{
+    display: inline-block;
+}
 
 .home-page{
+    background-image: url("../storage/industry.jpg");
     background-size: 100% 100%;
     min-height: 79.4vh;
     background-repeat: no-repeat;
 }
 
-.page-container{
-    position: relative;
-    min-height: 100vh;
-}
-  
-  
 #footer {
     position: absolute;
     bottom: 0;
@@ -21,17 +24,12 @@
     height: 5.7rem;            /* Footer height */
 }
 
-footer .fa {
+#footer .fa {
     font-size: 30px;
     margin: 0 19px 0 19px;
 }
 
-.nav-logo{
-    display: inline-block;
-}
-.page-container{
-    background-color: rgba(0,0,255,0.5)
-}
+
 
 
 
@@ -49,14 +47,4 @@ footer .fa {
         background-position-x: 23%;
     }
     
-}
-
-@media only screen and (max-width: 413px) {
-
-    .home-page {
-        background-size: cover;
-        min-height: 82.6vh;
-        background-repeat: no-repeat;
-        background-position-x: 23%;
-    }
 }

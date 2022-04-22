@@ -11,15 +11,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Role;
 use App\Notifications\NewAccount;
 
-class User extends Authenticatable
-{
-    use HasApiTokens, HasFactory, Notifiable;
+class User extends Authenticatable {
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+
     protected $fillable = [
         'name',
         'email',
@@ -27,25 +22,18 @@ class User extends Authenticatable
         'role_id'
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+    protected $dates = ['deleted_at'];
+
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 
+    // One role belongs to this user?
     public function role() {
 
         return $this->belongsTo(Role::class);
@@ -60,5 +48,4 @@ class User extends Authenticatable
 
         $this->notify(new NewAccount($this));
     }
-
 }

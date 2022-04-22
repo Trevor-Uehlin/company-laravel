@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <div class="home-page" style="background-image: url('{{asset("storage/industry.jpg")}}');">
+    <div class="home-page">
 
         {{-- <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">

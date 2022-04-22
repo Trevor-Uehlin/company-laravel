@@ -18,6 +18,9 @@
 
             <br />
             <br />
+            <i class="fa fa-plus" style="font-size:20px;color:blue;"></i><a href="{{route("projects.create")}}"> Create a New Project</a>
+            <br />
+            <br />
             <i class="fa fa-plus" style="font-size:20px;color:blue;"></i><a href="{{route("users.create")}}"> Create a New User</a>
             <br />
             <br />
