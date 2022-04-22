@@ -44,17 +44,19 @@ footer .fa {
 
     .home-page {
         background-size: cover;
-        min-height: 76.5vh;
+        min-height: 82.6vh;
         background-repeat: no-repeat;
+        background-position-x: 23%;
     }
     
 }
 
-@media only screen and (max-width: 730px) {
+@media only screen and (max-width: 413px) {
 
     .home-page {
         background-size: cover;
         min-height: 82.6vh;
         background-repeat: no-repeat;
+        background-position-x: 23%;
     }
 }
