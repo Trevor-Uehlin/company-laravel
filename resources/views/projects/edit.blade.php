@@ -62,7 +62,7 @@
                     <div class="image-container">
                         <img src="{{asset($image->path)}}" alt="{{$image->title}}">
 
-                        <form method="POST" class="delete-form" action="{{route("images.destroy", $project->id)}}">
+                        <form method="POST" class="delete-form" action="{{route("images.destroy", $image->id)}}">
                             @csrf
                             @method("DELETE")
                             <div class="flex items-center justify-end mt-4">
