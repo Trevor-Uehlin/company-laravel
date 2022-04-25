@@ -33,30 +33,32 @@
             </div>
 
 
-            @if(auth()->user()->isAdministrator())
+            @auth
+                @if(auth()->user()->isAdministrator())
 
-                <div class="row">
-                    <form action="{{route("projects.show", $project->id)}}">
-                        @csrf
-                        <div class="flex items-center justify-end mt-4">
-                            <x-button class="ml-4">
-                                {{ __('Edit Project') }}
-                            </x-button>
-                        </div>
-                    </form>
+                    <div class="row">
+                        <form action="{{route("projects.show", $project->id)}}">
+                            @csrf
+                            <div class="flex items-center justify-end mt-4">
+                                <x-button class="ml-4">
+                                    {{ __('Edit Project') }}
+                                </x-button>
+                            </div>
+                        </form>
 
-                    <form method="POST" class="delete-form" action="{{route("projects.destroy", $project->id)}}">
-                        @csrf
-                        @method("DELETE")
-                        <div class="flex items-center justify-end mt-4">
-                            <x-button class="ml-4">
-                                {{ __('Delete Project') }}
-                            </x-button>
-                        </div>
-                    </form>
-                </div>
+                        <form method="POST" class="delete-form" action="{{route("projects.destroy", $project->id)}}">
+                            @csrf
+                            @method("DELETE")
+                            <div class="flex items-center justify-end mt-4">
+                                <x-button class="ml-4">
+                                    {{ __('Delete Project') }}
+                                </x-button>
+                            </div>
+                        </form>
+                    </div>
 
-            @endif
+                @endif
+            @endauth
         </x-custom.sub-content-area>
     
     @endforeach
