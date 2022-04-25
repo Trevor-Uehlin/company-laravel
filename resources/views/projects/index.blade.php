@@ -2,7 +2,12 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Here are some of the projects that I have been working on.') }}
-            <a href="{{route("projects.create")}}" class="float-right"><i class="fa fa-plus" style="font-size:35px;color:blue;"></i></a>
+            
+            @auth
+                @if(auth()->user()->isAdministrator())
+                    <a href="{{route("projects.create")}}" class="float-right"><i class="fa fa-plus" style="font-size:35px;color:blue;"></i></a>
+                @endif
+            @endauth
         </h2>
     </x-slot>
 
