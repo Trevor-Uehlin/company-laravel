@@ -68,10 +68,10 @@ class UserController extends Controller {
 
 
     public function destroy($id) {
-        
+
         $user = User::findOrFail($id);
 
-        $user->destroy();
+        $user->delete();
 
         return redirect(route("users.index"));
     }

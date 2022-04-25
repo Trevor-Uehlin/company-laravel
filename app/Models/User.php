@@ -41,7 +41,10 @@ class User extends Authenticatable {
 
     public function isAdministrator() {
 
-        return $this->role->name == 'administrator';
+        if(!empty($this->role)) {
+
+            return $this->role->name == 'administrator';
+        }
     }
 
     public function sendNewAccountNotification(){

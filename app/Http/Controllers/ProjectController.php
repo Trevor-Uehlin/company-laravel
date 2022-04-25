@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Project;
 use App\Models\Image;
 
@@ -101,6 +102,19 @@ class ProjectController extends Controller {
 
     public function destroy($id) {
 
-        var_dump("Hello from destroy");
+        $project = Project::find($id);
+
+        $images = $project->images;
+
+        foreach($images as $image){
+
+            Storage::delete($image->path);
+            DB::table('image_project')->where('project_id', $project->id)->delete();
+            $image->delete();
+        }
+
+        $project->delete();
+
+        return redirect(route("projects"));
     }
 }

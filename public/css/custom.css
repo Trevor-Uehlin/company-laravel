@@ -17,6 +17,18 @@
     background-repeat: no-repeat;
 }
 
+.image-list-container{
+    background-color: grey;
+    color: white;
+    padding:10px;
+}
+
+.image-container{
+    padding:10px;
+    background-color: black;
+    margin:20px;
+}
+
 
 #footer {
     position: absolute;

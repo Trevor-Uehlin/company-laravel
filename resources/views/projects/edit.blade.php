@@ -33,31 +33,48 @@
                 <textarea name="description" id="description" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" rows="5">{{$project->description}}</textarea>
             </div>
 
-            <div class="mt-4">
-                <x-label for="file" :value="__('Add an Image')" />
-
-                <x-input id="file" class="block mt-1" type="file" name="file" />
-            </div>
-
             <br />
 
-            @foreach ($project->images as $image)
-                <img src="{{asset($image->path)}}" alt="{{$image->title}}">
-                <a href="{{route('image/delete', $image->id)}}">delete this image</a>
-                <br />
-                <br />
-                <br />
-            @endforeach
+            <div class="row">
 
-            <div class="flex items-center justify-end mt-4">
-                <x-button class="ml-4">
-                    {{ __('Save Project') }}
-                </x-button>
+                <div class="ml-4">
+                    <x-label for="file" :value="__('Add an Image')" />
+    
+                    <x-input id="file" class="block mt-1" type="file" name="file" />
+                </div>
+    
+                <div class="flex items-center justify-end mt-4">
+                    <x-button class="ml-4">
+                        {{ __('Save Project') }}
+                    </x-button>
+                </div>
+                
             </div>
-            
             <br />
             
         </form>
+
+            <br />
+
+            <div class="image-list-container">
+                <h3>Current Project Images</h3>
+                @foreach ($project->images as $image)
+                    <div class="image-container">
+                        <img src="{{asset($image->path)}}" alt="{{$image->title}}">
+
+                        <form method="POST" class="delete-form" action="{{route("images.destroy", $project->id)}}">
+                            @csrf
+                            @method("DELETE")
+                            <div class="flex items-center justify-end mt-4">
+                                <x-button class="ml-4">
+                                    {{ __('Delete Image') }}
+                                </x-button>
+                            </div>
+                        </form>
+                    </div>
+                @endforeach
+            </div>
+
     </div>
 
 

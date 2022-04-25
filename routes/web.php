@@ -51,46 +51,7 @@ Route::middleware(['admin'])->group(function(){
 
     Route::resource("/users", "App\Http\Controllers\UserController");
 
-
-    ########## Delete Routes #############################################
-    // I can't delete without a form...I think.  I am deleting with links, which is why I have to use these routes for now.
-
-    Route::get("/users/delete/{id}", function($id){
-
-        $user = User::find($id)->destroy($id);
-
-        return redirect(route("users.index"));
-    });
-
-    Route::get("/projects/delete/{id}", function($id){
-
-        $project = Project::find($id);
-
-        $images = $project->images;
-
-        foreach($images as $image){
-
-            Storage::delete($image->path);
-            DB::table('image_project')->where('project_id', $project->id)->delete();
-            $image->delete();
-        }
-
-        $project->delete();
-
-        return redirect(route("projects"));
-    })->name('project/delete');
-
-
-    Route::get("/image/delete/{id}", function($id){
-
-        $image = Image::find($id);
-
-        Storage::delete($image->path);
-        DB::table('image_project')->where('image_id', $image->id)->delete();
-        $image->delete();
-
-        return redirect(route("projects"));
-    })->name('image/delete');
+    Route::resource('/images', 'App\Http\Controllers\ImageController');
 
 
 });
