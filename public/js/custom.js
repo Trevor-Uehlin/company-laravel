@@ -12,8 +12,6 @@ for(let i = 0; i < deleteButtons.length; i++) {
 
 let deleteForms = document.getElementsByClassName("delete-form");
 
-console.log(deleteForms);
-
 for(let i = 0; i < deleteForms.length; i++) {
 
     deleteForms[i].onsubmit = function(e){

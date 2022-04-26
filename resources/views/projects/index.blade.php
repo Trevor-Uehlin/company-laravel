@@ -23,14 +23,97 @@
             <p class="h4"><strong>{{$project->title}}</strong></p>
             <p><strong>Organization: </strong>{{$project->organization}}</p>
             <p><strong>Description: </strong>{{$project->description}}</p>
-        
+
             <div class="image-list-container">
+
+                <div class="image-container">
+                    <div id="project-{{$project->id}}-carousel" class="carousel slide" data-bs-ride="carousel">
+
+                        {{-- <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div> --}}
+
+                        
+        
+                        <div class="carousel-inner">
+        
+                            @php $index = 0; @endphp
+                            @foreach ($project->images as $image)
+                                @if($index == 0)
+                                    <div class="carousel-item active">
+                                        <img src="{{asset($image->path)}}" class="d-block w-100" alt="{{$image->title}}">
+                                    </div>
+                                @else
+                                    <div class="carousel-item">
+                                        <img src="{{asset($image->path)}}" class="d-block w-100" alt="{{$image->title}}">
+                                    </div>
+                                @endif
+                                @php $index++; @endphp
+                            @endforeach
+        
+                        </div>
+        
+        
+        
+                        {{-- <button class="carousel-control-prev" type="button" data-bs-target="#project-{{$project->id}}-carousel" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+        
+                        <button class="carousel-control-next" type="button" data-bs-target="#project-{{$project->id}}-carousel" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button> --}}
+        
+                      </div>
+                </div>
+                
+                <div class="row w-100">
+                    <div class="col text-center">
+                        <x-button data-bs-target="#project-{{$project->id}}-carousel" data-bs-slide="prev">
+                            <
+                        </x-button>
+                        <x-button data-bs-target="#project-{{$project->id}}-carousel" data-bs-slide="next">
+                            >
+                        </x-button>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            {{-- <div class="image-list-container">
                 @foreach ($project->images as $image)
                     <div class="image-container">
                         <img src="{{asset($image->path)}}" alt="{{$image->title}}">
                     </div>
                 @endforeach
-            </div>
+            </div> --}}
 
 
             @auth
