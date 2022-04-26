@@ -59,5 +59,14 @@
         background-repeat: no-repeat;
         background-position-x: 23%;
     }
+
+    .image-list-container{
+        padding:2px;
+    }
+    
+    .image-container{
+        padding:2px;
+        margin-bottom: 0.5px;
+    }
     
 }
