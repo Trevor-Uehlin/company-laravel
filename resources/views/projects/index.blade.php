@@ -14,9 +14,9 @@
         </h2>
     </x-slot>
 
-    <x-custom.sub-content-area>
-        Showing {{count($projects)}} project(s)
-    </x-custom.sub-content-area>
+    <div class="w-100 text-center bg-light">
+        <p>Showing {{count($projects)}} project(s)</p>
+    </div>
 
     @foreach ($projects as $project)
 
