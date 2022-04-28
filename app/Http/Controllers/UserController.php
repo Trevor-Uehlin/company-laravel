@@ -29,7 +29,7 @@ class UserController extends Controller {
         $user = User::create([
             'name' => $_POST["name"],
             'email' => $_POST["email"],
-            'user_type' => $_POST["user_type"],
+            'role_id' => $_POST["user_type"],
             'password' => Hash::make($_POST["password"]),
         ]);
         

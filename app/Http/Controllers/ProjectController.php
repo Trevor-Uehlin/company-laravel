@@ -35,6 +35,7 @@ class ProjectController extends Controller {
         $project->title = $request['title'];
         $project->organization = $request['organization'];
         $project->description = $request['description'];
+        $project->url = $request['url'];
 
         $file = $request->file('file');
 

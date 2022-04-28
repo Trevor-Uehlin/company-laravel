@@ -19,6 +19,12 @@
 
                 <x-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('name')" required autofocus />
             </div>
+            
+            <div class="mt-4">
+                <x-label for="url" :value="__('Site URL')" />
+
+                <x-input id="url" class="block mt-1 w-full" type="text" name="url" required />
+            </div>
 
             <div class="mt-4">
                 <x-label for="organization" :value="__('Organization')" />

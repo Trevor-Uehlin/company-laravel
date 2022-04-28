@@ -24,6 +24,12 @@
             </div>
 
             <div class="mt-4">
+                <x-label for="url" :value="__('Site URL')" />
+
+                <x-input id="url" class="block mt-1 w-full" type="text" name="url" :value="$project->url" required />
+            </div>
+
+            <div class="mt-4">
                 <x-label for="organization" :value="__('Organization')" />
 
                 <x-input id="organization" class="block mt-1 w-full" type="text" name="organization" :value="$project->organization" required />

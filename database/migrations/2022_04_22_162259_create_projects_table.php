@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('organization');
             $table->longText('description');
+            $table->string('url');
             $table->softDeletes();
             $table->timestamps();
         });

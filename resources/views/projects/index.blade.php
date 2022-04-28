@@ -23,10 +23,11 @@
         <x-custom.sub-content-area>
 
             <p>Published: {{Carbon\Carbon::parse($project->created_at)->format("D, F, Y")}}</p>
-            <p class="h4"><strong>{{$project->title}}</strong></p>
+            <p class="h4"><strong><a href="{{$project->url}}" style="color: blue;">{{$project->title}}</a></strong></p>
             <p><strong>Organization: </strong>{{$project->organization}}</p>
             <p><strong>Description: </strong>{{$project->description}}</p>
 
+            <a href="{{$project->url}}" style="color: blue;">
             <div class="image-list-container">
 
                 <div class="image-container">

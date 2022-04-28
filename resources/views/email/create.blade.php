@@ -8,7 +8,7 @@
 
     <x-custom.sub-content-area>
         <p>
-            {{ __('Please feel free to reach out and share any thoughts you may have about myself or my website.') }}
+            {{ __('Feel free to reach out and share any thoughts you may have about myself or my website.') }}
         </p>
     </x-custom.sub-content-area>
 
