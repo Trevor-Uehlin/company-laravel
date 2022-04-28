@@ -27,7 +27,6 @@
             <p><strong>Organization: </strong>{{$project->organization}}</p>
             <p><strong>Description: </strong>{!! nl2br($project->description) !!}</p>
 
-            <a href="{{$project->url}}" style="color: blue;">
             <div class="image-list-container">
 
                 <div class="image-container">
