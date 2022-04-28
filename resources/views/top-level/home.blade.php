@@ -6,7 +6,7 @@
 
         <div class="home-message">
             <p>Hi, I'm Trevor and this is my website!</p>
-            <p>It was built using Laravel.  It is a place for me to practice development, and show some of the projects that I have worked on.</p>
+            <p>It was built using Laravel.  It is a place for me to practice development, and share some of the projects that I have worked on.</p>
         </div>
 
     </div>
