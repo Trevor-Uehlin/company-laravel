@@ -24,14 +24,14 @@
         background-size: cover;
         min-height: 82.6vh;
         background-repeat: no-repeat;
-        background-position-x: 23%;
+        background-position-x: -65vw;
     }
     .home-message{
         font-weight: 900;
         font-size: 1.2rem;
         width: 90vw;
         position: relative;
-        top:60vh;
+        top:50vh;
         left:5vw;
     }
 }
