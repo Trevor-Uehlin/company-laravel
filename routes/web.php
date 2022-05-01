@@ -20,7 +20,7 @@ Route::middleware(['web'])->group(function(){
 
 
     # Playground Routes
-    Route::view('playground/item/1', 'playground.item-1')->name('play/item/1');
+    Route::view('vue/test', 'playground.vue.test')->name('vue-test');
     Route::view('playground/item/2', 'playground.item-2')->name('play/item/2');
 });
 

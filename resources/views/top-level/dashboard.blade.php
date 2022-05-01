@@ -7,7 +7,7 @@
     </x-slot>
 
     <x-custom.sub-content-area>
-        {{__('You are logged in...thank you for registering!')}}
+        {{__('You are logged in!')}}
     </x-custom.sub-content-area>
 
 

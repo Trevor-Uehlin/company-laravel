@@ -52,8 +52,8 @@
                             </x-slot>
     
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('play/item/1')" :active="request()->routeIs('play/item/1')">
-                                    {{ __('Playground Item 1') }}
+                                <x-dropdown-link :href="route('vue-test')" :active="request()->routeIs('vue-test')">
+                                    {{ __('Vue Test') }}
                                 </x-dropdown-link>
 
                                 <x-dropdown-link :href="route('play/item/2')" :active="request()->routeIs('play/item/2')">
@@ -176,8 +176,8 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('play/item/1')" :active="request()->routeIs('play/item/1')">
-                            {{ __('Playground Item 1') }}
+                        <x-dropdown-link :href="route('vue-test')" :active="request()->routeIs('vue-test')">
+                            {{ __('Vue Test') }}
                         </x-dropdown-link>
 
                         <x-dropdown-link :href="route('play/item/2')" :active="request()->routeIs('play/item/2')">
