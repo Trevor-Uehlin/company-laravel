@@ -13,7 +13,8 @@ use App\Notifications\NewAccount;
 
 class User extends Authenticatable {
 
-    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable;
+    //use SoftDeletes;
 
     protected $fillable = [
         'name',
