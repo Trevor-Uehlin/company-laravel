@@ -33,8 +33,8 @@
                 <x-label for="user_type" :value="__('Select User Type')" />
 
                 <select name="user_type" id="user_type" class="block mt-1 w-full">
-                    <option value="subscriber">Subscriber</option>
-                    <option value="administrator">Administrator</option>
+                    <option value="2">Subscriber</option>
+                    <option value="1">Administrator</option>
                 </select>
             </div>
 

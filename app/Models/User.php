@@ -22,7 +22,8 @@ class User extends Authenticatable {
         'role_id'
     ];
 
-    protected $dates = ['deleted_at'];
+    // Not going to use softDeletes for now.
+    //protected $dates = ['deleted_at'];
 
     protected $hidden = [
         'password',
