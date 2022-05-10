@@ -11,10 +11,12 @@ class WeatherController extends Controller {
     public function index() {
 
         $user_ip = $_SERVER["REMOTE_ADDR"];
-        //$user_ip = "73.67.251.164";
+        $user_ip = "73.67.251.164";
 
         $locationUrl = "https://ipapi.co/$user_ip/json/";
         $locationInfo = Http::get($locationUrl)->json();
+
+        if($locationInfo['error'] == true) throw new \Exception("IP_ERROR: Can't get your current location.");
 
         $lat = $locationInfo["latitude"];
         $lon = $locationInfo["longitude"];
