@@ -16,7 +16,7 @@ class WeatherController extends Controller {
         $locationUrl = "https://ipapi.co/$user_ip/json/";
         $locationInfo = Http::get($locationUrl)->json();
 
-        if($locationInfo['error'] == true) throw new \Exception("IP_ERROR: Can't get your current location.");
+        if(!empty($locationInfo['error'])) throw new \Exception("Location Error: " . $locationInfo["reason"]);
 
         $lat = $locationInfo["latitude"];
         $lon = $locationInfo["longitude"];
