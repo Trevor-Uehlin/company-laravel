@@ -1,15 +1,16 @@
 <x-app-layout>
 
-    <div class="container">
 
-        <h1>The weather</h1>
+    <x-custom.sub-content-area>
+
+        <form method="POST" action="{{route('weather.store')}}">
+            @csrf
         
-        <form action="" method="post">
-            <label for="city">City</label>
-            <input type="text" name="city">
-    
-    
+            <input type="text">
+
+            <x-button>Show Weather</x-button>
         </form>
-    </div>
+
+    </x-custom.sub-content-area>
 
 </x-app-layout>

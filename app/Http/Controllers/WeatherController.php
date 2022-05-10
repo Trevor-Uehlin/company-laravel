@@ -9,6 +9,11 @@ class WeatherController extends Controller {
 
     public function index() {
 
+        $user_ip = $_SERVER['REMOTE_ADDR'];
+
+        var_dump($user_ip);exit;
+
+        var_dump($request('latitude'));exit;
         return view("playground.weather.index");
 
 
@@ -30,7 +35,12 @@ class WeatherController extends Controller {
 
     public function create() {}
 
-    public function store(Request $request) {}
+    public function store(Request $request) {
+
+        $ip = $request->ip();
+
+        var_dump($request->latitude);exit;
+    }
 
     public function show($id) {}
 
