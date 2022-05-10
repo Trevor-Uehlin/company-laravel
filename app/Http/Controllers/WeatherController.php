@@ -9,29 +9,53 @@ class WeatherController extends Controller {
 
     public function index() {
 
-        $user_ip = $_SERVER['REMOTE_ADDR'];
+        $user_ip = $_SERVER["REMOTE_ADDR"];
+        $user_ip = "73.67.251.164";
 
-        var_dump($user_ip);exit;
+        $locationUrl = "https://ipapi.co/$user_ip/json/";
+        $locationInfo = Http::get($locationUrl)->json();
 
-        var_dump($request('latitude'));exit;
-        return view("playground.weather.index");
+        $lat = $locationInfo["latitude"];
+        $lon = $locationInfo["longitude"];
+        $apiKey = env("OPEN_WEATHER_MAP_API_KEY");
 
+        $weatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$apiKey&units=metric";
+        $weatherInfo = Http::get($weatherUrl)->json();
 
+        $weather = $this->parse($locationInfo, $weatherInfo);
 
-        // $lat = "44.052151";
-        // $lon = "-123.091187";
-        // $apiKey = env("OPEN_WEATHER_MAP_API_KEY");
-
-        // $url = "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$apiKey";
-
-        // $response = Http::get("$url");
-
-        // $weather = $response->json();
-
-        // return view("playground.weather", compact("weather"));
-
-        //var_dump($response->json());exit;
+        return view("playground.weather.index", compact("weather"));
     }
+
+
+    public function parse($location, $weather) {
+
+        $parsed = new \stdClass();
+        $parsed->city = $location["city"];
+        $parsed->state = $location["region"];
+        $parsed->mostly = $weather['weather'][0]['main'];
+        $parsed->description = $weather['weather'][0]['description'];
+        $parsed->icon = $weather['weather'][0]['icon'];
+        $parsed->currentTemp = floor($this->toFarenheit($weather['main']['temp']));
+        $parsed->minTemp = floor($this->toFarenheit($weather['main']['temp_min']));
+        $parsed->maxTemp = floor($this->toFarenheit($weather['main']['temp_max']));
+        $parsed->pressure = $weather['main']['pressure'];
+        $parsed->humidity = $weather['main']['humidity'];
+        $parsed->visibility = $weather['visibility'];
+        $parsed->windSpeed = $weather['wind']['speed'];
+        $parsed->windGust = $weather['wind']['gust'];
+        $parsed->sunrise = $weather['sys']['sunrise'];
+        $parsed->sunset = $weather['sys']['sunset'];
+
+        return $parsed;
+    }
+
+
+    public function toFarenheit($temp) {
+
+        return ($temp * 9/5) + 32;
+    }
+
 
     public function create() {}
 
@@ -49,4 +73,9 @@ class WeatherController extends Controller {
     public function update(Request $request, $id) {}
 
     public function destroy($id) {}
+
+
 }
+
+
+

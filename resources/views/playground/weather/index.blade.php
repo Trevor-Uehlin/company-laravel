@@ -3,13 +3,9 @@
 
     <x-custom.sub-content-area>
 
-        <form method="POST" action="{{route('weather.store')}}">
-            @csrf
-        
-            <input type="text">
-
-            <x-button>Show Weather</x-button>
-        </form>
+        @php
+            var_dump($weather);
+        @endphp
 
     </x-custom.sub-content-area>
 
