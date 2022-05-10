@@ -50,7 +50,7 @@ class WeatherController extends Controller {
         $formated = $sunrise->format("g:i A");
         $parsed->sunrise = $formated;
 
-        $sunset = new Carbon($weather['sys']['sunset']);
+        $sunset = new Carbon(($weather['sys']['sunset'] / 1000));
         $formated = $sunset->format("g:i A");
         $parsed->sunset = $formated;
 
