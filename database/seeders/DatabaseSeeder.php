@@ -12,8 +12,6 @@ class DatabaseSeeder extends Seeder {
 
     public function run() {
 
-        \App\Models\User::factory(5)->create();
-
 
         // Create initial data and send admin(myself) an email to set password.
         DB::insert('insert into roles (name) values (?)', ['administrator']);
@@ -28,5 +26,7 @@ class DatabaseSeeder extends Seeder {
         ]);
 
         $user->sendNewAccountNotification();
+
+        \App\Models\User::factory(5)->create();
     }
 }
