@@ -1,5 +1,10 @@
 <x-app-layout>
 
+    <x-custom.sub-content-area>
+        The location is a little off, and so are the times for sunrise and sunset.  Also not really sure what is going
+        on with the pressure.
+    </x-custom.sub-content-area>
+
 
     <x-custom.sub-content-area>
 
@@ -10,7 +15,7 @@
         <p>Max Temperature: {{$weather->maxTemp}}&#8457;</p>
         <p>Min Temperature: {{$weather->minTemp}}&#8457;</p>
         <p>Pressure: {{$weather->pressure}}</p>
-        <p>Humidity: {{$weather->humidity}}	&#37;</p>
+        <p>Humidity: {{$weather->humidity}}&#37;</p>
         <p>Wind Speed: {{$weather->windSpeed}} mph</p>
         <p>Wind Gust: {{$weather->windGust}} mph</p>
         <p>Visibility: {{$weather->visibility}} miles</p>

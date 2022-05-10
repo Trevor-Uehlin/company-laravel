@@ -44,13 +44,14 @@ class WeatherController extends Controller {
         $parsed->humidity = $weather['main']['humidity'];
         $parsed->visibility = substr($weather['visibility'], 0, 2);
         $parsed->windSpeed = $weather['wind']['speed'];
-        $parsed->windGust = $weather['wind']['gust'];
+        $parsed->windGust = empty($weather['wind']['gust']) ? 0 : $weather['wind']['gust'];
 
-        $sunrise = new Carbon($weather['sys']['sunrise']);
+
+        $sunrise = new Carbon(($weather['sys']['sunrise'] * 1000));
         $formated = $sunrise->format("g:i A");
         $parsed->sunrise = $formated;
 
-        $sunset = new Carbon(($weather['sys']['sunset'] / 1000));
+        $sunset = new Carbon(($weather['sys']['sunset'] * 1000));
         $formated = $sunset->format("g:i A");
         $parsed->sunset = $formated;
 
@@ -62,26 +63,6 @@ class WeatherController extends Controller {
 
         return ($temp * 9/5) + 32;
     }
-
-
-    public function create() {}
-
-    public function store(Request $request) {
-
-        $ip = $request->ip();
-
-        var_dump($request->latitude);exit;
-    }
-
-    public function show($id) {}
-
-    public function edit($id) {}
-
-    public function update(Request $request, $id) {}
-
-    public function destroy($id) {}
-
-
 }
 
 
