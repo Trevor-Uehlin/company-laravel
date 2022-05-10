@@ -1,8 +1,7 @@
 <x-app-layout>
 
     <x-custom.sub-content-area>
-        The location is a little off, and so are the times for sunrise and sunset.  Also not really sure what is going
-        on with the pressure.
+        I am using openweathermap.org's api for the weather, and ipapi.com for the location.  I think they both may be a little off.
     </x-custom.sub-content-area>
 
 
@@ -19,8 +18,8 @@
         <p>Wind Speed: {{$weather->windSpeed}} mph</p>
         <p>Wind Gust: {{$weather->windGust}} mph</p>
         <p>Visibility: {{$weather->visibility}} miles</p>
-        <p>Sunrise: {{$weather->sunrise}} a little off...</p>
-        <p>Sunset: {{$weather->sunset}} a little off...</p>
+        <p>Sunrise: {{$weather->sunrise}} (this is way off)</p>
+        <p>Sunset: {{$weather->sunset}} (this is way off)</p>
 
     </x-custom.sub-content-area>
 
