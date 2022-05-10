@@ -55,6 +55,8 @@
                     <x-button class="ml-4">
                         {{ __('Save Project') }}
                     </x-button>
+
+                    <x-button-link href="{{route('projects')}}" class="ml-2">{{__('Cancel')}}</x-button-link>
                 </div>
                 
             </div>

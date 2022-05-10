@@ -38,7 +38,8 @@
                                         </div>
                                     </form>
 
-                                    <form method="POST" class="delete-form" action="{{route("users.destroy", $user->id)}}">
+                                    @php $confirm = "Are you sure you want to delete this user?"; @endphp
+                                    <form method="POST" action="{{route("users.destroy", $user->id)}}" onSubmit="return confirm('{{$confirm}}');">
                                         @csrf
                                         @method("DELETE")
                                         <div class="flex items-center justify-end mt-4">

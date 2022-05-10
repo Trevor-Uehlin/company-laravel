@@ -61,6 +61,8 @@
                 <x-button class="ml-4">
                     {{ __('Register') }}
                 </x-button>
+
+                <x-button-link href="{{route('users.index')}}" class="ml-2">{{__('Cancel')}}</x-button-link>
             </div>
             
         </form>

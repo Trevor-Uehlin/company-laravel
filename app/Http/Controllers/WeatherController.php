@@ -9,15 +9,23 @@ class WeatherController extends Controller {
 
     public function index() {
 
-        $lat = "44.052151";
-        $lon = "-123.091187";
-        $apiKey = "feb58d1c860b98ae1a7e498827e2967e";
+        return view("playground.weather.index");
 
-        $url = "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$apiKey";
 
-        $response = Http::get("$url");
 
-        var_dump($response);exit;
+        // $lat = "44.052151";
+        // $lon = "-123.091187";
+        // $apiKey = env("OPEN_WEATHER_MAP_API_KEY");
+
+        // $url = "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$apiKey";
+
+        // $response = Http::get("$url");
+
+        // $weather = $response->json();
+
+        // return view("playground.weather", compact("weather"));
+
+        //var_dump($response->json());exit;
     }
 
     public function create() {}

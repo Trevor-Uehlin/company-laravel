@@ -79,7 +79,8 @@
                             </div>
                         </form>
 
-                        <form method="POST" class="delete-form" action="{{route("projects.destroy", $project->id)}}">
+                        @php $confirm = "Are you sure you want to delete this project?"; @endphp
+                        <form method="POST" action="{{route("projects.destroy", $project->id)}}" onSubmit="return confirm('{{$confirm}}');">
                             @csrf
                             @method("DELETE")
                             <div class="flex items-center justify-end mt-4">

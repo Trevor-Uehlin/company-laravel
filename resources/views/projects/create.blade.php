@@ -11,7 +11,7 @@
     <br />
 
     <div class="container">
-        <form method="POST" action="{{route("projects.store")}}" enctype="multipart/form-data">
+        <form method="POST" class="mb-4" action="{{route("projects.store")}}" enctype="multipart/form-data">
             @csrf
 
             <div>
@@ -48,6 +48,8 @@
                 <x-button class="ml-4">
                     {{ __('Save Project') }}
                 </x-button>
+
+                <x-button-link href="{{route('projects')}}" class="ml-2">{{__('Cancel')}}</x-button-link>
             </div>
             
         </form>
