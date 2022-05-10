@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Carbon\Carbon;
 
 class WeatherController extends Controller {
 
     public function index() {
 
         $user_ip = $_SERVER["REMOTE_ADDR"];
-        //$user_ip = "73.67.251.164";
+        $user_ip = "73.67.251.164";
 
         $locationUrl = "https://ipapi.co/$user_ip/json/";
         $locationInfo = Http::get($locationUrl)->json();
@@ -41,11 +42,17 @@ class WeatherController extends Controller {
         $parsed->maxTemp = floor($this->toFarenheit($weather['main']['temp_max']));
         $parsed->pressure = $weather['main']['pressure'];
         $parsed->humidity = $weather['main']['humidity'];
-        $parsed->visibility = $weather['visibility'];
+        $parsed->visibility = substr($weather['visibility'], 0, 2);
         $parsed->windSpeed = $weather['wind']['speed'];
         $parsed->windGust = $weather['wind']['gust'];
-        $parsed->sunrise = $weather['sys']['sunrise'];
-        $parsed->sunset = $weather['sys']['sunset'];
+
+        $sunrise = new Carbon($weather['sys']['sunrise']);
+        $formated = $sunrise->format("g:i A");
+        $parsed->sunrise = $formated;
+
+        $sunset = new Carbon($weather['sys']['sunset']);
+        $formated = $sunset->format("g:i A");
+        $parsed->sunset = $formated;
 
         return $parsed;
     }
