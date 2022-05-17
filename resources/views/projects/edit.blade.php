@@ -18,6 +18,12 @@
             @csrf
 
             <div>
+                <x-label for="priorty" :value="__('Priority')" />
+
+                <x-input id="priority" class="block mt-1 w-9" type="text" name="priority" :value="$project->priority" required autofocus />
+            </div>
+
+            <div class="mt-4">
                 <x-label for="title" :value="__('Title')" />
 
                 <x-input id="title" class="block mt-1 w-full" type="text" name="title" :value="$project->title" required autofocus />

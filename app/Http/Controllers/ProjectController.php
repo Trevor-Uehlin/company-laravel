@@ -17,7 +17,7 @@ class ProjectController extends Controller {
 
     public function index() {
 
-        $projects = Project::latest()->get();
+        $projects = Project::orderBy("priority")->get();
 
         return view('projects.index', compact("projects"));
     }
@@ -36,6 +36,7 @@ class ProjectController extends Controller {
         $project->organization = $request['organization'];
         $project->description = $request['description'];
         $project->url = $request['url'];
+        $project->priority = $request['priority'];
 
         $file = $request->file('file');
 
@@ -77,6 +78,8 @@ class ProjectController extends Controller {
         $project->title = $request['title'];
         $project->organization = $request['organization'];
         $project->description = $request['description'];
+        $project->url = $request['url'];
+        $project->priority = $request['priority'];
         $project->update();
 
         $file = $request->file('file');

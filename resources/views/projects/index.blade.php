@@ -25,7 +25,8 @@
             <p>Published: {{Carbon\Carbon::parse($project->created_at)->format("D, F, Y")}}</p>
             <p class="h4"><strong><a href="{{$project->url}}" style="color: blue;">{{$project->title}}</a></strong></p>
             <p><strong>Organization: </strong>{{$project->organization}}</p>
-            <p><strong>Description: </strong>{!! nl2br($project->description) !!}</p>
+            <p class="mb-0"><strong>Description</strong></p>
+            <p>{!! nl2br($project->description) !!}</p>
 
             <div class="image-list-container">
 
@@ -51,7 +52,7 @@
                     </div>
                 </div>
                 
-                <div class="row w-100">
+                <div class="row w-100 slide-controls">
                     <div class="col text-center">
                         <x-button data-bs-target="#project-{{$project->id}}-carousel" data-bs-slide="prev">
                             <
