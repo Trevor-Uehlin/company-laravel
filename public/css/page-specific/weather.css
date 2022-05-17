@@ -3,3 +3,15 @@
     background-color: blue;
     color:white;
 }
+
+
+@media screen and (max-width:750px) {
+
+    .forcast{
+        margin-top:40px;
+    }
+    .ml-5, .text-center{
+        margin-left:unset !important;
+    }
+    
+}

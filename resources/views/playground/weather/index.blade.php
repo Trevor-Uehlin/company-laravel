@@ -32,20 +32,23 @@
             <p>Visibility: {{$weather["today"]["visibility"]}} miles</p>
         </div>
 
+        <div class="text-center ml-5 forcast">
 
-        <p class="h4">7 Day Forcast</p>
+            <p class="h4">7 Day Forcast</p>
 
-        <div class="row ml-5 text-center">
-
-            @foreach($weather["forcast"] as $day => $daily)
-
-            <div class="m-4">
-                <p>{{$day}}</p>
-                <img src="http://openweathermap.org/img/wn/{{$daily["icon"]}}.png" alt="weather icon" class="ml-3">
-                <p>{{$daily["maxTemp"]}}&#176; / {{$daily["minTemp"]}}&#176;</p>
+            <div class="row ml-5 text-center">
+    
+                @foreach($weather["forcast"] as $day => $daily)
+    
+                <div class="m-4">
+                    <p>{{$day}}</p>
+                    <img src="http://openweathermap.org/img/wn/{{$daily["icon"]}}.png" alt="weather icon" class="ml-3">
+                    <p>{{$daily["maxTemp"]}}&#176; / {{$daily["minTemp"]}}&#176;</p>
+                </div>
+    
+                @endforeach
+    
             </div>
-
-            @endforeach
 
         </div>
 
