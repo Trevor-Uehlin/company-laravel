@@ -1,13 +1,22 @@
 <x-app-layout>
 
+    <link rel="stylesheet" href="{{asset('css/page-specific/weather.css')}}">
+
     <x-custom.sub-content-area>
         I am using openweathermap.org's api for the weather, and ipapi.com for the location.  I think they both may be a little off.
     </x-custom.sub-content-area>
 
+    {{-- @php
+        var_dump($weather);exit;
+    @endphp --}}
+
 
     <x-custom.sub-content-area>
 
-        <h3>Showing the weather for {{$weather->city . ", " . $weather->state}}...or at least close to it.</h3>
+        <h3>Showing the weather for {{$weather->city . ", " . $weather->state}}</h3>
+        <div class="icon-container">
+            <img src="http://openweathermap.org/img/wn/{{$weather->icon}}.png" alt="" class="weather-icon">
+        </div>
         <p>Mostly: {{$weather->mostly}}.</p>
         <p>Description: {{$weather->description}}</p>
         <p>Current Temperature: {{$weather->currentTemp}}&#8457;</p>

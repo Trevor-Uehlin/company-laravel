@@ -10,12 +10,13 @@ class WeatherController extends Controller {
 
     public function index() {
 
-        $user_ip = $_SERVER["REMOTE_ADDR"];
-        //$user_ip = "73.67.251.164";
+        //$user_ip = $_SERVER["REMOTE_ADDR"];
+        $user_ip = "73.67.251.164";
+        $ipapiKey = env("IPAPI_API_KEY");
 
-        $locationUrl = "https://ipapi.co/$user_ip/json/";
+        $locationUrl = "http://api.ipapi.com/$user_ip?access_key=$ipapiKey";
         $locationInfo = Http::get($locationUrl)->json();
-
+        
         if(!empty($locationInfo['error'])) throw new \Exception("Location Error: " . $locationInfo["reason"]);
 
         $lat = $locationInfo["latitude"];
@@ -35,7 +36,7 @@ class WeatherController extends Controller {
 
         $parsed = new \stdClass();
         $parsed->city = $location["city"];
-        $parsed->state = $location["region"];
+        $parsed->state = $location["region_code"];
         $parsed->mostly = $weather['weather'][0]['main'];
         $parsed->description = $weather['weather'][0]['description'];
         $parsed->icon = $weather['weather'][0]['icon'];

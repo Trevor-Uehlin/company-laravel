@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
 }
 .home-message{
+    display:none;
     border-radius: 20px;
     padding:10px;
     color: white;
@@ -27,6 +28,7 @@
         background-position-x: -65vw;
     }
     .home-message{
+        display: none;
         font-weight: 900;
         font-size: 1.2rem;
         width: 90vw;
