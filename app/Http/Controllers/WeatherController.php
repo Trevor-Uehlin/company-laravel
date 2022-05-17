@@ -10,8 +10,8 @@ class WeatherController extends Controller {
 
     public function index() {
 
-        //$user_ip = $_SERVER["REMOTE_ADDR"];
-        $user_ip = "73.67.251.164";
+        $user_ip = $_SERVER["REMOTE_ADDR"];
+        //$user_ip = "73.67.251.164";
         $ipapiKey = env("IPAPI_API_KEY");
 
         $locationUrl = "http://api.ipapi.com/$user_ip?access_key=$ipapiKey";
