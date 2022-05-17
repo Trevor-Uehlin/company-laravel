@@ -42,7 +42,7 @@
     
                 <div class="m-4">
                     <p>{{$day}}</p>
-                    <img src="http://openweathermap.org/img/wn/{{$daily["icon"]}}.png" alt="weather icon" class="ml-3">
+                    <img src="http://openweathermap.org/img/wn/{{$daily["icon"]}}.png" alt="weather icon" class="icon">
                     <p>{{$daily["maxTemp"]}}&#176; / {{$daily["minTemp"]}}&#176;</p>
                 </div>
     
